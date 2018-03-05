@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add Review</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'reviews/add.css'%}">
+</head>
+<body>
+	<div id='container'>
+		<div id="header">
+			<h3>Add a New Book and Review</h3>
+			<a href="/success/{{ request.session.id }}">Home</a>
+			<a href="/logout">Logout</a>
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		</div>
+		<div id="form">
+			<form action="/create" method="post">
+				{% csrf_token %}
+				<label for="title">Book Title</label>
+				<input type="text" name="title" id="title">
+				<label for="author_old">Author</label/>
+				<ul>	
+					<li>Choose from the list:</label><select name="author_old" id="author_old">
+												<option></option>
+												{% for objects in authors%}
+												<option>{{ objects.name }}</option>
+												{% endfor %}
+											</select></li>
+					<li>Or add a new author:<input type="text" name="author_new" id="author_new">
+				</ul></li>
+				<label for='review' id="review_label">Review</label> <textarea name="review" id="review"></textarea>
+				<div id="review_box">
+					<label for="rating" id="rating_label">Rating:</label> <select name="rating" id="rating">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+						</select>
+					star(s)
+					<input type="submit" value="Add Book and Review" id="submit">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

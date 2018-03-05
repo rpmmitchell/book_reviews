@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add a Review</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'reviews/review_page.css'%}">
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<h1>{{ book.title }}</h1>
+		<a href="/logout" class="link">Logout</a>
+		<a href="/success/{{ request.session.id }}" class="link">Home</a>
+		<h3>Author: {{ author.name }}</h3>
+	</div>
+	<p class="topper">Reviews:</p>
+	<div id="books">
+		{% for objects in review%}
+			<div class="review">
+				<ul>
+					<li>{{ objects.rating }} star(s)</li>
+					<li><a href="/profile/{{ objects.reviewed_by.id }}">{{ objects.reviewed_by.alias}}</a> says: {{ objects.review }}</li>
+					<li>Posted on {{ objects.created_at }}</li>
+					{% if request.session.id == objects.reviewed_by.id %}
+						<li><a href="/delete/{{ objects.id }}/{{ book.id }}">Delete This Review</a></li>
+					{% endif %}
+				</ul>
+			</div>
+		{% endfor %}
+	</div>
+	<div id="form">
+		<form action="/add_review/{{ request.session.id }}/{{ book.id }}" method="post">
+			{% csrf_token %}
+			Add a Review:
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{message}}</p>
+				{% endfor %}
+			{% endif %}
+			<textarea name="new_review"></textarea>
+			Rating: <select name="new_rating"> 
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+			star(s)
+			<input type="submit" value="Submit Review" id="button">
+		</form>
+	</div>
+</div>
+</body>
+</html>

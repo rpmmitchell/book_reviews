@@ -1,0 +1,60 @@
+li {
+	list-style: none;
+}
+
+textarea {
+	display: block;
+	resize: none;
+	width: 55%;
+	height: 80px;
+}
+
+.review {
+	border-bottom: 2px solid black;
+	display: inline-block;
+	width: 100%;
+}
+
+#form {
+	display: inline-block;
+	float: right;
+	vertical-align: top;
+	width: 30%;
+	margin-top: -35px;
+}
+
+#form #button {
+	display: block;
+	margin-top: 15%;
+	float: right;
+	margin-right: 44%;
+}
+
+.link {
+	float: right;
+	vertical-align: top;
+	margin-right: 1%;
+	margin-top: 2%;
+}
+h1 {
+	display: inline-block;
+}
+
+.topper {
+	border-bottom: 2px solid black;
+	width: 690px;
+	padding-left: 20px;
+	margin-left: 20px;
+}
+
+#books {
+	display: inline-block;
+ 	width: 710px;
+ 	height: 463px;
+ 	overflow: scroll;
+ 	padding-left: 20px;
+}
+
+#header {
+	padding-left: 20px;
+}

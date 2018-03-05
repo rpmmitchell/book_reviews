@@ -1,0 +1,81 @@
+#container {
+	text-align: center;
+}
+
+#form {
+	display: inline-block;
+	border: 2px solid black;
+	width: 50%;
+	height: 450px;
+}
+input {
+	display: block;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+label {
+	display: block;
+}
+
+select {
+	display: block;
+}
+
+select #rating{
+	display: inline-block;
+	width: 20px;
+}
+#review {
+	display: inline-block;
+	resize: none;
+	margin-bottom: 2%;
+}
+#rating_label {
+	display: inline-block;
+}
+
+#rating {
+	display: inline-block;
+	margin-bottom: 2%;
+}
+
+#author_old {
+	display: inline-block;
+	margin-left: 5%;
+	width: 155px;
+	margin-bottom: 5%;
+}
+
+#author_new {
+	display: inline-block;
+ 	margin-left: 5%;
+}
+
+li {
+	list-style: none;
+}
+
+
+#title {
+	margin-left: 36%;
+	width: 200px;
+}
+
+#review {
+	width: 330px;
+	margin-left: 4%;
+	height: 100px;
+}
+
+#review_box {
+	display: block;
+}
+
+#submit {
+	margin-left: 40%;
+}
+
+
+
+

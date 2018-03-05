@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'reviews/success.css' %}">
+</head>
+<body>
+<div id="container">
+	<div id="top">
+		<div id="header">
+			<h1>Welcome, Spudling {{ request.session.name }}</h1>
+			<a href="/logout">logout</a>
+			<a href="/add/">Add Book and Review</a>
+		</div>
+		<h3 class="recent_reviews"></a>Recent Book Reviews:</h3>
+		<h3 class="other_reviews">Other Books with Reviews:</h3>
+	</div>
+	<div id="recent_reviews">
+		{% for objects in query_recent %}
+			<h3><a href="/review_page/{{ request.session.id }}/{{ objects.book_reviewed.id }}">{{ objects.book_reviewed.title }}</a></h3>
+			<p>Rating: {{ objects.rating}} star(s)</p>
+			<p><a href="/profile/{{ objects.reviewed_by.id }}">{{ objects.reviewed_by.alias}}</a> says: {{ objects.review }}</p>
+			<p>{{ objects.created_at }}</p>
+		{% endfor %}
+	</div>
+	<div id="old_reviews">
+		<ul>
+			{% for objects in query_old %}
+				<li><a href="/review_page/{{ request.session.id }}/{{ objects.book_reviewed.id }}">{{ objects.book_reviewed.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+
+#container {
+	text-align: center;
+}
+
+#login {
+	display: inline-block;
+	width: 400px;
+	height: 300px;
+	border: 2px solid black;
+	vertical-align: top;
+	padding-top: 30px;
+}
+
+#register {
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	border: 2px solid black;
+	padding-top: 30px;
+}
+
+
+#content {
+	margin-top: 60px;
+	height: 500px;
+}
+
+#register label {
+	display: block;
+}
+
+#login label {
+	display: block;
+}
+
+.submit1 {
+	display: block;
+	margin-left: 165px;
+	margin-top: 20px;
+}
+
+.submit2 {
+	display: block;
+	margin-left: 180px;
+	margin-top: 20px;
+}
+
+#register_tag {
+	display: inline-block;
+	width: 108px;
+	float: left;
+	margin-top: -55px;
+	background-color: white;
+	font-size: 30px;
+	margin-left: 10px;
+}
+
+#login_tag {
+	display: inline-block;
+	width: 78px;
+	float: left;
+	margin-top: -55px;
+	background-color: white;
+	font-size: 30px;
+	margin-left: 10px;
+}
+
+img {
+	height: 10%;
+	width: 10%;
+}
+
+
+
+

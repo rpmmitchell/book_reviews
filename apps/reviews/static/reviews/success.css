@@ -1,0 +1,54 @@
+#recent_reviews {
+	display: inline-block;
+	width: 40%;
+	margin-left: 3%;
+} 
+
+#old_reviews {
+	display: inline-block;
+	width: 30%;
+	height: 200px;
+	vertical-align: top;
+	overflow: scroll;
+	border: 2px solid black;
+	margin-top: 25px;
+	margin-left: -30px;
+}
+
+
+#top h3 {
+	display: inline-block;
+	width: 30%
+}
+#top a {
+	float: right;
+	vertical-align: top;
+	margin-left: 1%;
+	margin-top: 4%;
+	margin-right: 2%;
+}
+.top_right {
+	float: right;
+}
+
+h1 {
+	display: inline-block;
+	width: 50%;
+}
+
+.other_reviews {
+	float: right;
+	margin-right: 15%;
+}
+
+#header {
+	margin-left: 10px;
+}
+
+.recent_reviews {
+	margin-left: 15px;
+}
+
+img {
+	margin-left: -260px;
+}

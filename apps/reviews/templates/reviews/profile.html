@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Profile</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'reviews/profile.css' %}">
+</head>
+<body>
+<div id="container">
+	<a href="/logout" class="link">Logout</a>
+	<a href="/success/{{ request.session.id }}" class="link">Home</a>
+	<div id="info">
+		<ul>
+			<li id="top_li">User Alias: {{ user.alias }}</li>
+			<li>Name: {{ user.name }}</li>
+			<li>Email: {{ user.email }}</li>
+			<li>Total Reviews: {{ reviews_len }}</li>
+		</ul>
+		<h3 class="review_activity">Review Activity:</h3>
+	</div>
+	<div id="reviews">
+		<ul>
+			{% for objects in reviews %}
+			<li><a href="/review_page/{{ request.session.id }}/{{ objects.book_reviewed.id}}">{{ objects.book_reviewed.title }}</a>: {{ objects.created_at}}</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<img src="https://d30womf5coomej.cloudfront.net/ua/19/fc070de3-b902-44da-a139-cf5e18d66f3e.png">
+</div>
+</body>
+</html>

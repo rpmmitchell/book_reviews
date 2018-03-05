@@ -1,0 +1,44 @@
+
+#container {
+	text-align: center;
+}
+.link {
+	float: right;
+	margin-right: 1%
+}
+
+li {
+	list-style: none;
+	margin-bottom: 1%
+}
+
+#info {
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+#reviews {
+	border: 2px solid black;
+	overflow: scroll;
+	height: 150px;
+	display: inline-block;
+	width: 350px;
+	margin-left: 40px;
+}
+
+#reviews li{
+	margin-left: -30px;
+}
+
+#top_li {
+	margin-left: 110px;
+}
+
+.review_activity {
+	margin-left: 40px;
+}
+
+img {
+	display: block;
+	margin-left: 575px;
+}
